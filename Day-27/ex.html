@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./ex.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <span>Đăng nhập</span>
+      </div>
+      <div class="form-group">
+        <div class="wrapper-logo">
+          <div class="logo">
+            <img src="./logobtvn.png" alt="" />
+            <span class="close">&#10005;</span>
+          </div>
+        </div>
+        <div class="row-title">
+          <button class="item-title active">Đăng nhập</button>
+          <button class="item-title">Đăng ký</button>
+        </div>
+        <div class="list-form">
+          <!-- Form login -->
+          <form class="form-item active form-login">
+            <div class="field-input">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" placeholder="Email" />
+              <p class="text-error err-email"></p>
+            </div>
+            <div class="field-input">
+              <label for="password">Mật khẩu</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Mật khẩu"
+                class="password"
+              />
+              <div class="show-hide">
+                <i class="fa-regular fa-eye"></i>
+              </div>
+              <p class="text-error err-password"></p>
+            </div>
+            <div class="modal-loading">
+              <div class="loading"></div>
+            </div>
+            <button class="btn-login btn-form">Đăng nhập</button>
+          </form>
+
+          <!-- Form Register -->
+          <form class="form-item form-register">
+            <div class="field-input">
+              <label for="name">Họ và tên</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Họ và tên"
+              />
+              <p class="text-error err-name"></p>
+            </div>
+            <div class="field-input">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" placeholder="Email" />
+              <p class="text-error err-email"></p>
+            </div>
+            <div class="field-input">
+              <label for="password">Mật khẩu</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Mật khẩu"
+              />
+              <div class="show-hide">
+                <i class="fa-regular fa-eye"></i>
+              </div>
+              <p class="text-error err-password"></p>
+            </div>
+            <button class="btn-register btn-form">Đăng ký</button>
+          </form>
+        </div>
+      </div>
+      <div class="overlay"></div>
+    </div>
+    <script src="./ex.js"></script>
+  </body>
+</html>
