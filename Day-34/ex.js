@@ -1,5 +1,3 @@
-//Xây dựng Editor
-
 var content = document.querySelector("#content");
 var boldBtn = document.querySelector("#bold-btn");
 var underlineBtn = document.querySelector("#underline-btn");
@@ -20,34 +18,28 @@ window.addEventListener("DOMContentLoaded", function () {
   document.execCommand("styleWithCSS", false, true);
 
   boldBtn.addEventListener("click", function () {
-    //Thực hiện hành động bôi đen
     document.execCommand("bold");
   });
 
   italicBtn.addEventListener("click", function () {
-    //Thực hiện hành động nghiêng
     document.execCommand("italic");
   });
 
   underlineBtn.addEventListener("click", function () {
-    //Thực hiện hành động gạch chân
     document.execCommand("underline");
   });
 
   colorBtn.addEventListener("input", function () {
-    //Thay đổi màu văn bản
     document.execCommand("foreColor", false, this.value);
   });
 
   content.addEventListener("input", function () {
     var contentText = this.innerText;
 
-    //Đếm số ký tự
     var charCount = contentText.trim().length;
 
     charCountEl.children[0].innerText = charCount;
 
-    //Đếm số từ
     var wordCount = contentText.trim().match(/\S+/g)?.length;
     wordCountEl.children[0].innerText = wordCount ?? 0;
   });
