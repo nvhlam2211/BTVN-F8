@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./ex.css" />
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+      </head>
+
+      <body>
+        <div class="container">
+          <h4 id="title">Doc Editor</h4>
+          <div class="controls">
+            <div class="main-controls">
+              <div class="dropdown">
+                <button
+                  class="btn btn-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                >
+                  File
+                </button>
+                <div class="dropdown-menu">
+                  <button id="new-btn" class="dropdown-item">New</button>
+                  <button id="txt-btn" class="dropdown-item">
+                    Save as TXT
+                  </button>
+                  <button id="pdf-btn" class="dropdown-item">
+                    Save as PDF
+                  </button>
+                </div>
+              </div>
+
+              <input id="filename-input" type="text" value="untitled" />
+            </div>
+            <div class="control-btn-container">
+              <button id="bold-btn" class="btn btn-dark control-btn">
+                <b>b</b>
+              </button>
+              <button id="underline-btn" class="btn btn-dark control-btn">
+                <u>u</u>
+              </button>
+              <button id="italic-btn" class="btn btn-dark control-btn">
+                <i>i</i>
+              </button>
+              <input id="color-btn" type="color" class="control-btn" />
+            </div>
+          </div>
+
+          <div id="content" contenteditable="true" spellcheck="false"></div>
+
+          <div class="counter d-flex justify-content-end gap-2">
+            <span class="char-count"> Số ký tự: <span>0</span> </span>
+            <span class="word-count"> Số từ: <span>0</span> </span>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+      </body>
+    </html>
+    <script src="./ex.js"></script>
+  </body>
+</html>
