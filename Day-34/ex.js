@@ -6,50 +6,37 @@ var colorBtn = document.querySelector("#color-btn");
 var charCountEl = document.querySelector(".char-count");
 var wordCountEl = document.querySelector(".word-count");
 var filenameInput = document.querySelector("#filename-input");
+var initalFilename = filenameInput.value;
 var newBtn = document.querySelector("#new-btn");
 var txtBtn = document.querySelector("#txt-btn");
 var pdfBtn = document.querySelector("#pdf-btn");
 
-var initialFilename = filenameInput.value;
-
 window.addEventListener("DOMContentLoaded", function () {
   content.focus();
-
-  document.execCommand("styleWithCSS", false, true);
-
   boldBtn.addEventListener("click", function () {
     document.execCommand("bold");
   });
-
-  italicBtn.addEventListener("click", function () {
-    document.execCommand("italic");
-  });
-
   underlineBtn.addEventListener("click", function () {
     document.execCommand("underline");
   });
-
+  italicBtn.addEventListener("click", function () {
+    document.execCommand("italic");
+  });
   colorBtn.addEventListener("input", function () {
     document.execCommand("foreColor", false, this.value);
   });
-
   content.addEventListener("input", function () {
     var contentText = this.innerText;
-
     var charCount = contentText.trim().length;
-
     charCountEl.children[0].innerText = charCount;
-
     var wordCount = contentText.trim().match(/\S+/g)?.length;
     wordCountEl.children[0].innerText = wordCount ?? 0;
   });
-
   newBtn.addEventListener("click", function () {
     content.innerText = "";
-    filenameInput.value = initialFilename;
+    filenameInput.value = initalFilename;
     content.focus();
   });
-
   txtBtn.addEventListener("click", function () {
     var filename = filenameInput.value;
     var contentText = content.innerText.trim();
@@ -60,12 +47,10 @@ window.addEventListener("DOMContentLoaded", function () {
     a.download = `${filename}.txt`;
     a.click();
   });
-
   pdfBtn.addEventListener("click", function () {
     var filename = filenameInput.value;
     html2pdf().from(content).save(`${filename}.pdf`);
   });
-
   content.addEventListener("paste", function (e) {
     e.preventDefault();
     var data = e.clipboardData;
