@@ -36,6 +36,8 @@ window.addEventListener("DOMContentLoaded", function () {
     content.innerText = "";
     filenameInput.value = initalFilename;
     content.focus();
+    charCountEl.children[0].innerText = 0;
+    wordCountEl.children[0].innerText = 0;
   });
   txtBtn.addEventListener("click", function () {
     var filename = filenameInput.value;
